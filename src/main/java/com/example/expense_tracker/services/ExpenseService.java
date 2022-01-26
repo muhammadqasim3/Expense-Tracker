@@ -17,4 +17,9 @@ public class ExpenseService {
 	public List<Expense> findAll(){
 		return expenseRepository.findAll();
 	}
+	
+	public void saveExpense(Expense expense) {
+		expense.setCreatedAt(System.currentTimeMillis());
+		expenseRepository.save(expense);
+	}
 }
