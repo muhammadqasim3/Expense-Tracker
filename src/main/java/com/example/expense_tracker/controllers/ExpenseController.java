@@ -53,5 +53,11 @@ public class ExpenseController {
 		return mav;
 	} 
 	
+	@RequestMapping(value="/expense/{id}/delete")
+	public String delete(@PathVariable("id") Long id){
+		expenseService.delete(id);
+		return "redirect:/expenses";
+	} 
+	
 	
 }

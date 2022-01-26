@@ -29,4 +29,11 @@ public class ExpenseService {
 		}
 		return null;
 	}
+	
+	public void delete(Long id) {
+		Expense expense = findById(id);
+		expenseRepository.delete(expense);
+	}
+	
+	
 }

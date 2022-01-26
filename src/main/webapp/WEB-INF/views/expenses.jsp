@@ -20,6 +20,7 @@ pageEncoding="UTF-8"%>
 				<p>Description: ${expense.note}</p>
 				<p>Amount: $${ expense.amount } </p>
 				<button ><a href="${contextRoot}/expense/${expense.id}">Edit</a></button>
+				<button ><a href="${contextRoot}/expense/${expense.id}/delete">Delete</a></button>
 				
 			</div>
 		</c:forEach>
