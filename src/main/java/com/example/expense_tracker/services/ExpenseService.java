@@ -22,4 +22,11 @@ public class ExpenseService {
 		expense.setCreatedAt(System.currentTimeMillis());
 		expenseRepository.save(expense);
 	}
+	
+	public Expense findById(Long id) {
+		if(expenseRepository.findById(id).isPresent()){
+			return expenseRepository.findById(id).get();
+		}
+		return null;
+	}
 }

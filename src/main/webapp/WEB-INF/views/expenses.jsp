@@ -19,6 +19,8 @@ pageEncoding="UTF-8"%>
 				<h3>Title: ${expense.expensename}</h3>
 				<p>Description: ${expense.note}</p>
 				<p>Amount: $${ expense.amount } </p>
+				<button ><a href="${contextRoot}/expense/${expense.id}">Edit</a></button>
+				
 			</div>
 		</c:forEach>
 			

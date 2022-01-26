@@ -2,6 +2,7 @@ package com.example.expense_tracker.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,6 +43,15 @@ public class ExpenseController {
 		expenseService.saveExpense(expense);
 		return "redirect:/expenses";
 	}
+	
+	
+	@RequestMapping(value="/expense/{id}")
+	public ModelAndView edit(@PathVariable("id") Long id){
+		ModelAndView mav = new ModelAndView("edit-expense");
+		Expense expense = expenseService.findById(id);
+		mav.addObject("expense",expense);
+		return mav;
+	} 
 	
 	
 }
